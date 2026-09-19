@@ -1,0 +1,7 @@
+.mainLayout {
+  position: fixed;
+  top: calc(var(--cls-h) + var(--top-h));
+  left: 0; right: 0;
+  bottom: var(--bot-h);
+  display: flex;
+}

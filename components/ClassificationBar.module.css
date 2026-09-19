@@ -1,0 +1,18 @@
+.bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--cls-h);
+  background: rgba(255, 180, 0, 0.12);
+  border-bottom: 1px solid rgba(255, 180, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  z-index: 8000;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+
+.seg { color: var(--amber); opacity: 0.9; }
+.center { color: rgba(255, 180, 0, 0.6); font-size: 8px; }

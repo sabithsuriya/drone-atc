@@ -1,0 +1,146 @@
+.droneView { position: absolute; inset: 0; background: #000; }
+
+.feed { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.9; }
+
+.hud { position: absolute; inset: 0; pointer-events: none; }
+
+/* Top telem */
+.fpvTop {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  background: rgba(4, 12, 20, 0.8);
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  padding: 6px 20px;
+  gap: 16px;
+  backdrop-filter: blur(4px);
+}
+.telemBlock { display: flex; flex-direction: column; align-items: center; gap: 1px; }
+.ftLabel { font-size: 8px; color: var(--text-mid); letter-spacing: 0.1em; }
+.ftVal { font-size: 13px; font-weight: 700; color: var(--cyan); letter-spacing: 0.05em; }
+.ftVal.large { font-size: 18px; color: var(--white); }
+.ftVal.green { color: var(--green); }
+.divider { width: 1px; height: 28px; background: var(--border-dim); }
+.large { font-size: 18px; color: var(--white); }
+.green { color: var(--green); }
+
+/* ID Badge */
+.idBadge {
+  position: absolute; top: 12px; left: 14px;
+  background: rgba(4, 12, 20, 0.8);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 6px 10px;
+  backdrop-filter: blur(4px);
+}
+.droneId { font-size: 18px; font-weight: 700; color: var(--cyan); letter-spacing: 0.1em; text-shadow: 0 0 16px var(--cyan); }
+.droneName { font-size: 11px; color: var(--text-mid); letter-spacing: 0.1em; }
+.droneSector { font-size: 9px; color: var(--text-dim); margin-top: 2px; }
+
+/* Role badge */
+.roleBadge {
+  position: absolute; top: 12px; right: 14px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  backdrop-filter: blur(4px);
+}
+.roleViewer { background: rgba(0, 229, 255, 0.1); border: 1px solid var(--cyan); color: var(--cyan); }
+.roleOp { background: rgba(0, 255, 136, 0.1); border: 1px solid var(--green); color: var(--green); text-shadow: 0 0 10px var(--green); animation: opBadgePulse 2s ease-in-out infinite; }
+
+/* Corner brackets */
+.bracket { position: absolute; width: 24px; height: 24px; border-color: rgba(0, 229, 255, 0.6); border-style: solid; }
+.tl { top: 8px;  left: 8px;  border-width: 2px 0 0 2px; }
+.tr { top: 8px;  right: 8px; border-width: 2px 2px 0 0; }
+.bl { bottom: 46px; left: 8px;  border-width: 0 0 2px 2px; }
+.br { bottom: 46px; right: 8px; border-width: 0 2px 2px 0; }
+
+/* Horizon */
+.horizon { position: absolute; top: 50%; left: 5%; right: 5%; height: 1px; background: rgba(0, 229, 255, 0.2); transform: translateY(-50%); }
+
+/* Crosshair */
+.crosshair { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.chH { position: absolute; width: 30px; height: 1px; background: rgba(0, 229, 255, 0.5); top: 0; left: -15px; }
+.chV { position: absolute; height: 30px; width: 1px; background: rgba(0, 229, 255, 0.5); left: 0; top: -15px; }
+.chCircle { position: absolute; width: 8px; height: 8px; border: 1px solid rgba(0, 229, 255, 0.7); border-radius: 50%; top: -4px; left: -4px; }
+
+/* Compass */
+.compassWrap { position: absolute; bottom: 52px; left: 50%; transform: translateX(-50%); width: 300px; text-align: center; }
+.compassStrip {
+  font-size: 9px; color: var(--text-mid); letter-spacing: 0.15em;
+  display: flex; justify-content: space-around;
+  background: rgba(4, 12, 20, 0.7);
+  padding: 3px 6px;
+  border: 1px solid var(--border-dim);
+  border-radius: 3px; overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.compassTick { font-size: 10px; color: var(--cyan); margin-top: -2px; text-shadow: 0 0 6px var(--cyan); }
+
+/* Locked notice */
+.lockedNotice {
+  position: absolute; bottom: 52px; left: 50%;
+  transform: translateX(-50%);
+  font-size: 9px; color: var(--amber);
+  background: rgba(4, 12, 20, 0.85);
+  border: 1px solid rgba(255, 180, 0, 0.3);
+  padding: 4px 12px;
+  border-radius: 3px;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+/* Nav bar */
+.navBar {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 42px;
+  background: rgba(4, 12, 20, 0.92);
+  border-top: 1px solid var(--border-dim);
+  display: flex; align-items: center;
+  padding: 0 12px; gap: 10px;
+  backdrop-filter: blur(6px);
+  pointer-events: all;
+}
+.dnavBtn {
+  background: var(--bg-section);
+  border: 1px solid var(--border);
+  color: var(--cyan);
+  padding: 5px 12px;
+  font-family: var(--font-mono);
+  font-size: 9px; cursor: pointer;
+  border-radius: 2px; letter-spacing: 0.08em;
+  transition: background 0.2s; flex-shrink: 0;
+}
+.dnavBtn:hover { background: var(--cyan-glow); }
+.thumbStrip { flex: 1; display: flex; gap: 8px; justify-content: center; align-items: center; }
+.thumb {
+  padding: 3px 10px;
+  border: 1px solid var(--border-dim);
+  font-size: 9px; color: var(--text-dim);
+  cursor: pointer; border-radius: 2px;
+  transition: all 0.2s; text-align: center;
+}
+.thumb:hover { border-color: var(--cyan); color: var(--cyan); }
+.thumbActive { border-color: var(--cyan); color: var(--cyan); background: var(--cyan-glow); }
+.thumbId { font-size: 9px; font-weight: 700; }
+.thumbSub { font-size: 7px; }
+
+/* Back */
+.backBtn {
+  position: absolute; bottom: 50px; left: 14px;
+  background: rgba(4, 12, 20, 0.85);
+  border: 1px solid var(--border);
+  color: var(--text-mid);
+  padding: 5px 12px;
+  font-family: var(--font-mono); font-size: 9px;
+  cursor: pointer; border-radius: 2px;
+  letter-spacing: 0.08em;
+  transition: all 0.2s; pointer-events: all;
+}
+.backBtn:hover { border-color: var(--cyan); color: var(--cyan); }

@@ -1,0 +1,23 @@
+.scanline {
+  position: fixed;
+  inset: 0; z-index: 9000;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 229, 255, 0.022) 2px,
+    rgba(0, 229, 255, 0.022) 4px
+  );
+  animation: scanShift 8s linear infinite;
+}
+
+.vignette {
+  position: fixed;
+  inset: 0; z-index: 8999;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center,
+    transparent 40%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+}
